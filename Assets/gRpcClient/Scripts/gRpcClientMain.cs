@@ -13,6 +13,7 @@ public class gRpcClientMain : MonoBehaviour
         var channel = new Channel("http://localhost:5050", ChannelCredentials.Insecure);
         var client = new Greeter.GreeterClient(channel);
         var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
+
         Debug.Log("Greeting: " + reply.Message);
     }
 
